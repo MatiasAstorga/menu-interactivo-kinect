@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69BB0E72-9FA9-43B7-9673-1BCB6F7F3877}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Samples.Kinect.ControlsBasics</RootNamespace>
+    <AssemblyName>Menu-Interactivo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Kinect.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputPath>$(BinDir)$(PlatformTarget).$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Kinect">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(KINECTSDK10_DIR)\Assemblies\Microsoft.Kinect.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="KinectHoverButton.cs" />
+    <Compile Include="SelectionDisplay.xaml.cs">
+      <DependentUpon>SelectionDisplay.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Common\StandardStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SelectionDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Kinect.Toolkit.Controls\Microsoft.Kinect.Toolkit.Controls.csproj">
+      <Project>{4508C4D1-85BB-4F3F-9E3B-CC93D231C65D}</Project>
+      <Name>Microsoft.Kinect.Toolkit.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Microsoft.Kinect.Toolkit\Microsoft.Kinect.Toolkit.csproj">
+      <Project>{C6F9C31B-6130-4443-A5CC-EF0664552ECD}</Project>
+      <Name>Microsoft.Kinect.Toolkit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Kinect.ico" />
+    <Resource Include="Images\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo-utem.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hambur1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hambur2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bebida0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cajita0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\papas0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\empanaditas0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\helados0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\completos0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hamburguesa0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\textura0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\textura1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\textura2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Kinect.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\textura3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bebida1.0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bebida1.1.png" />
+    <Resource Include="Images\bebida1.2.png" />
+    <Resource Include="Images\bebida1.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bebida2.0.png" />
+    <Resource Include="Images\bebida2.1.png" />
+    <Resource Include="Images\bebida2.2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\helados1.0.png" />
+    <Resource Include="Images\helados1.1.png" />
+    <Resource Include="Images\helados1.2.png" />
+    <Resource Include="Images\helados1.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\empanaditas1.0.png" />
+    <Resource Include="Images\empanaditas1.1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cajita1.0.png" />
+    <Resource Include="Images\cajita1.1.png" />
+    <Resource Include="Images\cajita1.2.png" />
+    <Resource Include="Images\cajita1.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hambur1.0.png" />
+    <Resource Include="Images\hambur1.1.png" />
+    <Resource Include="Images\hambur1.2.png" />
+    <Resource Include="Images\hambur1.3.png" />
+    <Resource Include="Images\hambur1.4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\papas1.0.png" />
+    <Resource Include="Images\papas1.1.png" />
+    <Resource Include="Images\papas1.2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\empanaditas2.1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\completos2.0.png" />
+    <Resource Include="Images\completos2.1.png" />
+    <Resource Include="Images\completos2.2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\completos1.0.png" />
+    <Resource Include="Images\completos1.1.png" />
+    <Resource Include="Images\completos1.2.png" />
+    <Resource Include="Images\completos1.3.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
